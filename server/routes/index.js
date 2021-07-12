@@ -12,6 +12,6 @@ router.post('/register', [ middleware.registerModuleValidaiton ], index.register
 // user login api
 router.post('/login', [ middleware.loginModuleValidaiton ], index.login)
 
-router.get('/test', index.test)
+// router.post('/logout', [ middleware.isUserLogin ], index.logout)
 
 module.exports = router

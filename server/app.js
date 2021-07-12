@@ -7,6 +7,7 @@ var loggerObject = require('./config/logger')
 var logger = require('morgan')
 var indexRouter = require('./routes/index')
 const responseHelper = require('./controller/helper/responseHelper')
+const productRouter = require('./routes/product')
 var dotenv = require('dotenv').config()
 var app = express()
 
@@ -21,6 +22,7 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
+app.use('/product', productRouter)
 
 app.use(passport.initialize())
 app.use(passport.session()) // persistent login sessions

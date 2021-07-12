@@ -6,10 +6,10 @@ require('dotenv').config()
 
 module.exports = {
   development: {
-    username: process.env.DBUSER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
-    host: process.env.HOST,
+    username: 'root',
+    password: '12345',
+    database: 'pizzaapp',
+    host: 'localhost',
     dialect: 'mysql',
     //logging: getBool()
   },

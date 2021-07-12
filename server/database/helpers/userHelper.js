@@ -106,8 +106,7 @@ module.exports = {
   getUser: async (query) => {
     try {
       let getUser = await user.findOne({
-        where: query,
-        include: [ { model: models.Client, as: 'client', attributes: [ 'licenseStartDate', 'licenseEndDate' ] } ]
+        where: query
       })
       if (getUser) {
         return getUser
