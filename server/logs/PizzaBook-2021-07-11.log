@@ -1,0 +1,34 @@
+{"message":"fileName: Hello World, message: [object Object]","level":"warn","timestamp":"2021-07-11T06:48:41.175Z"}
+{"message":"fileName: login:req Body, message: {\"firstName\":\"Amit Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\"}","level":"warn","timestamp":"2021-07-11T06:54:26.779Z"}
+{"message":"fileName: userHelper:getUserByEmail, message: SequelizeConnectionError: Unknown database 'pizzaapp'","level":"warn","timestamp":"2021-07-11T06:54:28.583Z"}
+{"message":"fileName: login:req Body, message: {\"firstName\":\"Amit Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\"}","level":"warn","timestamp":"2021-07-11T06:55:58.833Z"}
+{"message":"fileName: userHelper:getUserByEmail, message: SequelizeDatabaseError: Table 'pizzaapp.users' doesn't exist","level":"warn","timestamp":"2021-07-11T06:55:59.366Z"}
+{"message":"fileName: login:req Body, message: {\"firstName\":\"Amit Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\"}","level":"warn","timestamp":"2021-07-11T07:00:06.962Z"}
+{"message":"fileName: userHelper:getUserByEmail, message: SequelizeDatabaseError: Table 'pizzaapp.users' doesn't exist","level":"warn","timestamp":"2021-07-11T07:00:07.404Z"}
+{"message":"fileName: login:req Body, message: {\"firstName\":\"Amit Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\"}","level":"warn","timestamp":"2021-07-11T10:04:40.499Z"}
+{"message":"fileName: userHelper:getUserByEmail, message: SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: YES)","level":"warn","timestamp":"2021-07-11T10:04:41.157Z"}
+{"message":"fileName: login:req Body, message: {\"firstName\":\"Amit Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\"}","level":"warn","timestamp":"2021-07-11T10:04:54.817Z"}
+{"message":"fileName: userHelper:getUserByEmail, message: SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: YES)","level":"warn","timestamp":"2021-07-11T10:04:54.959Z"}
+{"message":"fileName: login:req Body, message: {\"firstName\":\"Amit Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\"}","level":"warn","timestamp":"2021-07-11T10:08:48.934Z"}
+{"message":"fileName: userHelper:getUserByEmail, message: SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: YES)","level":"warn","timestamp":"2021-07-11T10:08:49.021Z"}
+{"message":"fileName: login:req Body, message: {\"firstName\":\"Amit Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\"}","level":"warn","timestamp":"2021-07-11T10:08:58.799Z"}
+{"message":"fileName: userHelper:getUserByEmail, message: SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: YES)","level":"warn","timestamp":"2021-07-11T10:08:58.929Z"}
+{"message":"fileName: login:req Body, message: {\"firstName\":\"Amit Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\"}","level":"warn","timestamp":"2021-07-11T10:12:45.214Z"}
+{"message":"fileName: userHelper:getUserByEmail, message: SequelizeDatabaseError: Table 'pizzaapp.users' doesn't exist","level":"warn","timestamp":"2021-07-11T10:12:46.397Z"}
+{"message":"fileName: register:req Body, message: {\"firstName\":\"Amit Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\"}","level":"warn","timestamp":"2021-07-11T10:30:33.744Z"}
+{"message":"fileName: register:req Body, message: {\"firstName\":\"Amit Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\",\"role\":\"admin\"}","level":"warn","timestamp":"2021-07-11T10:31:09.052Z"}
+{"message":"fileName: register:req Body, message: {\"firstName\":\"Amit\",\"email\":\"amit@gmail.com\",\"password\":\"123456\",\"role\":\"admin\"}","level":"warn","timestamp":"2021-07-11T10:31:22.387Z"}
+{"message":"fileName: register:req Body, message: {\"firstName\":\"Amit\",\"email\":\"amit@gmail.com\",\"password\":\"123456\",\"role\":\"admin\"}","level":"warn","timestamp":"2021-07-11T10:33:23.660Z"}
+{"message":"fileName: register:req Body, message: {\"firstName\":\"Amit\",\"email\":\"amit@gmail.com\",\"password\":\"123456\",\"role\":\"admin\"}","level":"warn","timestamp":"2021-07-11T10:35:03.059Z"}
+{"message":"fileName: register:req Body, message: {\"firstName\":\"Amit\",\"email\":\"amit@gmail.com\",\"password\":\"123456\",\"role\":\"admin\"}","level":"warn","timestamp":"2021-07-11T10:35:28.325Z"}
+{"message":"fileName: register:req Body, message: {\"firstName\":\"Amit\",\"email\":\"amit@gmail.com\",\"password\":\"123456\",\"role\":\"admin\"}","level":"warn","timestamp":"2021-07-11T10:37:17.475Z"}
+{"message":"fileName: register:req Body, message: {\"firstName\":\"Amit\",\"email\":\"amit@gmail.com\",\"password\":\"123456\",\"role\":\"admin\"}","level":"warn","timestamp":"2021-07-11T10:41:49.400Z"}
+{"message":"fileName: register:req Body, message: {\"firstName\":\"Amit\",\"email\":\"amit@gmail.com\",\"password\":\"123456\",\"role\":\"admin\"}","level":"warn","timestamp":"2021-07-11T10:42:06.740Z"}
+{"message":"fileName: register:req Body, message: {\"firstName\":\"Amit\",\"lastName\":\"Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\",\"role\":\"admin\"}","level":"warn","timestamp":"2021-07-11T12:45:38.373Z"}
+{"message":"fileName: register:req Body, message: {\"firstName\":\"Amit\",\"lastName\":\"Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\",\"role\":\"admin\"}","level":"warn","timestamp":"2021-07-11T12:48:46.254Z"}
+{"message":"fileName: register:req Body, message: {\"username\":\"Amitgt\",\"firstName\":\"Amit\",\"lastName\":\"Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\",\"role\":\"admin\"}","level":"warn","timestamp":"2021-07-11T12:49:42.399Z"}
+{"message":"fileName: register:req Body, message: {\"username\":\"Amitgt\",\"firstName\":\"Amit\",\"lastName\":\"Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\",\"role\":\"admin\"}","level":"warn","timestamp":"2021-07-11T12:50:59.569Z"}
+{"message":"fileName: register:req Body, message: {\"username\":\"manish\",\"firstName\":\"Manish\",\"lastName\":\"Kini\",\"email\":\"manishK@gmail.com\",\"password\":\"123456\",\"role\":\"admin\"}","level":"warn","timestamp":"2021-07-11T12:51:59.484Z"}
+{"message":"fileName: login:req Body, message: {\"firstName\":\"Amit Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\"}","level":"warn","timestamp":"2021-07-11T12:53:19.702Z"}
+{"message":"fileName: login:req Body, message: {\"firstName\":\"Amit Gupta\",\"email\":\"amit@gmail.com\",\"password\":\"123456\"}","level":"warn","timestamp":"2021-07-11T12:53:36.423Z"}
+{"message":"fileName: Login JWT Token-amit@gmail.com-User , message: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXRAZ21haWwuY29tIiwidHlwZSI6IlVzZXIiLCJpYXQiOjE2MjYwMDgwMTcsImV4cCI6MTYyNjA5NDQxN30.-GLo7I7m5LEyrlDqPAlG_sLybT5KtcCk9WxWs8_i-30","level":"warn","timestamp":"2021-07-11T12:53:37.066Z"}
