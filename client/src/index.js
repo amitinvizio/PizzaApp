@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Navigation from './components/Navigation'
 
 ReactDOM.render(
-  <h1>Hello World</h1>,
+  <Navigation/>,
   document.getElementById('root')
 );
