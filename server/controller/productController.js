@@ -45,7 +45,6 @@ module.exports = {
 
   updateProduct: async (req, res) => {
     try {
-      console.log('Update Product')
       handleMultipartData(req, res, async (err) => {
         if (err) {
           return res.status(500).send(responseHelper.error(500, err.message))
@@ -54,8 +53,8 @@ module.exports = {
         const name = req.body.name
         const size = req.body.size
         const price = req.body.price
-        
         let data = { name, size, price }
+        
         if (req.file) {
           const filePath = req.file.path
           const image = req.file.destination + req.file.filename
@@ -73,6 +72,19 @@ module.exports = {
       });
     } catch (exception) {
       log('productController::updateProduct', exception)
+    }
+  },
+  
+  getAllProductList: async (req, res) => {
+    try {
+      let getProduct = await productHelper.getAllProduct()
+      if(getProduct){
+        return res.status(200).send(responseHelper.successWithResult(200, 'Product List', getProduct))
+      }else{
+        return res.status(400).send(responseHelper.error(400, 'Something went wrong while fetching data from database'))
+      }
+    } catch (exception) {
+      log('productController::getAllProductList', exception)
     }
   }
 

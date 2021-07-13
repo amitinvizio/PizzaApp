@@ -25,5 +25,19 @@ module.exports = {
       log('productHelper: productStore', exception)
       return false
     }
+  },
+
+  getAllProduct: async () => {
+    try {
+      let getProduct = await product.findAll();
+      if(getProduct){
+        return getProduct
+      }else{
+        return null
+      }
+    } catch (exception) {
+      log('productHelper:getAllProduct', exception)
+      return false
+    }
   }
 }

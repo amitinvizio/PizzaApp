@@ -8,5 +8,6 @@ router.use(cors())
 
 router.post('/', [ middleware.isUserLogin ], productController.store)
 router.patch('/:id', [ middleware.isUserLogin ], productController.updateProduct)
+router.get('/', [ middleware.isUserLogin ], productController.getAllProductList)
 
 module.exports = router
