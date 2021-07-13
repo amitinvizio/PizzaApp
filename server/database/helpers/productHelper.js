@@ -30,9 +30,9 @@ module.exports = {
   getAllProduct: async () => {
     try {
       let getProduct = await product.findAll();
-      if(getProduct){
+      if (getProduct) {
         return getProduct
-      }else{
+      } else {
         return null
       }
     } catch (exception) {
@@ -43,14 +43,27 @@ module.exports = {
 
   getProductListByID: async (query) => {
     try {
-      let getProduct = await product.findOne({ where:{id: query}  })
-      if(getProduct){
+      let getProduct = await product.findOne({ where: { id: query } })
+      if (getProduct) {
         return getProduct
-      }else{
+      } else {
         return null
       }
     } catch (exception) {
       log('productHelper:getProductListByID', exception)
+    }
+  },
+
+  deleteProductByID: async (query) => {
+    try {
+      let deleteProduct = await product.destroy({ where: { id: query } })
+      if (deleteProduct) {
+        return deleteProduct
+      } else {
+        return null
+      }
+    } catch (exception) {
+      log('productHelper:deleteProductByID', exception)
     }
   }
 }

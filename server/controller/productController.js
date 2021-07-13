@@ -100,6 +100,19 @@ module.exports = {
     } catch (exception) {
       log('productController::getProductListBy', exception)
     }
-  }
+  },
 
+  deleteProductByID: async (req, res) => {
+    try {
+      let id = req.params.id
+      let deleteProduct = await productHelper.deleteProductByID(id)
+      if(deleteProduct){
+        return res.status(200).send(responseHelper.successWithResult(200, null,'Deleted Product Successfully'))
+      }else{
+        return res.status(400).send(responseHelper.error(400, 'Something went wrong while deleting'))
+      }
+    } catch (exception) {
+      log('productController::deleteProduct', exception)
+    }
+  }
 }
