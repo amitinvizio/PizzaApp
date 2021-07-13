@@ -39,5 +39,18 @@ module.exports = {
       log('productHelper:getAllProduct', exception)
       return false
     }
+  },
+
+  getProductListByID: async (query) => {
+    try {
+      let getProduct = await product.findOne({ where:{id: query}  })
+      if(getProduct){
+        return getProduct
+      }else{
+        return null
+      }
+    } catch (exception) {
+      log('productHelper:getProductListByID', exception)
+    }
   }
 }

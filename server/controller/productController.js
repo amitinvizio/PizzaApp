@@ -74,7 +74,7 @@ module.exports = {
       log('productController::updateProduct', exception)
     }
   },
-  
+
   getAllProductList: async (req, res) => {
     try {
       let getProduct = await productHelper.getAllProduct()
@@ -85,6 +85,20 @@ module.exports = {
       }
     } catch (exception) {
       log('productController::getAllProductList', exception)
+    }
+  },
+
+  getProductListByID: async (req, res) => {
+    try {
+      let id = req.params.id
+      let getProduct = await productHelper.getProductListByID(id)
+      if(getProduct){
+        return res.status(200).send(responseHelper.successWithResult(200, 'Product Details', getProduct))
+      }else{
+        return res.status(400).send(responseHelper.error(400, 'Something went wrong while fetching data from database'))
+      }
+    } catch (exception) {
+      log('productController::getProductListBy', exception)
     }
   }
 
