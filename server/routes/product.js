@@ -7,5 +7,6 @@ var router = express.Router()
 router.use(cors())
 
 router.post('/', [ middleware.isUserLogin ], productController.store)
+router.patch('/:id', [ middleware.isUserLogin ], productController.updateProduct)
 
 module.exports = router

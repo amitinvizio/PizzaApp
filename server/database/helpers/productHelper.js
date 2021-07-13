@@ -13,5 +13,17 @@ module.exports = {
       log('productHelper: productStore', exception)
       return false
     }
+  },
+
+  updateProduct: async (data, query) => {
+    try {
+      let updateProduct = await product.update(data, { where: query })
+      if (updateProduct) {
+        return updateProduct
+      }
+    } catch (exception) {
+      log('productHelper: productStore', exception)
+      return false
+    }
   }
 }
