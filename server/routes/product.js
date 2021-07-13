@@ -6,6 +6,6 @@ var middleware = require('./middleware/validators')
 var router = express.Router()
 router.use(cors())
 
-router.post('/', [ middleware.isUserLogin , middleware.isProductValid ], productController.store)
+router.post('/', [ middleware.isUserLogin ], productController.store)
 
 module.exports = router
