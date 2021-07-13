@@ -91,4 +91,16 @@ module.exports = {
     }
   },
 
+  isProductValid: async (req, res, next) => {
+    try {
+      //let { name, size, price } = req.body
+      console.log("Request :: " + req.body)
+      // let name = req.body.name
+      // console.log("Name :: " + name)
+      next()
+    } catch (exception) {
+      log('validators:isProductValid', exception)
+      return res.status(500).send(responseHelper.error(500, 'Server Error occured'))
+    }
+  }
 }

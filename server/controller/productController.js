@@ -15,13 +15,18 @@ const handleMultipartData = multer({ storage, limit: { fileSize: 1000000 * 5 } }
 module.exports = {
   store: async (req, res) => {
     try {
-      console.log(req.body);
       handleMultipartData(req, res, (err) => {
-        if(err){
+        if (err) {
           return res.status(500).send(responseHelper.error(500, err.message))
         }
-        console.log(req.file)
         const filePath = req.file.path
+        const name = req.file.filename
+        const size = req.body.size
+        const price = req.body.price
+        const image = req.file.destination + req.file.filename
+        let productObj = { name, size, price, image }
+
+        console.log(productObj)
 
       });
     } catch (exception) {
