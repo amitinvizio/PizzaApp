@@ -2,7 +2,7 @@
 const colors = require('tailwindcss/colors')
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     screens: {
       sm: '480px',
@@ -11,10 +11,14 @@ module.exports = {
       xl: '1440px',
     },
     colors: {
-      gray: colors.coolGray,
-      blue: colors.sky,
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      white: colors.white,
+      gray: colors.trueGray,
+      indigo: colors.indigo,
       red: colors.rose,
-      pink: colors.fuchsia,
+      yellow: colors.amber,
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],

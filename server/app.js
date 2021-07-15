@@ -21,6 +21,9 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
+//  for displaying images on localhost via route http://localhost:PORT/uploads/filename.ext
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 app.use('/', indexRouter)
 app.use('/product', productRouter)
 

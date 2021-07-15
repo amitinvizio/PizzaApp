@@ -4,6 +4,6 @@ import './index.css';
 import Navigation from './components/Navigation'
 
 ReactDOM.render(
-  <Navigation/>,
+  <Navigation />,
   document.getElementById('root')
 );

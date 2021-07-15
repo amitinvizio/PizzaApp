@@ -78,8 +78,24 @@ module.exports = {
   getAllProductList: async (req, res) => {
     try {
       let getProduct = await productHelper.getAllProduct()
-      if(getProduct){
-        return res.status(200).send(responseHelper.successWithResult(200, 'Product List', getProduct))
+      let productList = []
+      let createdProduct = {}
+      for(let i=0; i < getProduct.length; i++) {
+        let id = getProduct[i].id
+        let uniqueId = getProduct[i].uniqueId
+        let name = getProduct[i].name
+        let price = getProduct[i].price
+        let size = getProduct[i].size
+        let image = "http://" + req.headers.host + "/"+ getProduct[i].image
+        let createdAt = getProduct[i].createdAt
+        let updatedAt = getProduct[i].updatedAt
+        let deletedAt = getProduct[i].deletedAt
+        createdProduct = { id, uniqueId, name, size, price, image, createdAt, updatedAt, deletedAt}
+        productList.push(createdProduct)
+      }
+
+      if(productList){
+        return res.status(200).send(responseHelper.successWithResult(200, 'Product List', productList))
       }else{
         return res.status(400).send(responseHelper.error(400, 'Something went wrong while fetching data from database'))
       }
@@ -92,8 +108,20 @@ module.exports = {
     try {
       let id = req.params.id
       let getProduct = await productHelper.getProductListByID(id)
-      if(getProduct){
-        return res.status(200).send(responseHelper.successWithResult(200, 'Product Details', getProduct))
+
+      let productList = {
+        id: getProduct.id,
+        uniqueId: getProduct.uniqueId,
+        name: getProduct.name,
+        size: getProduct.size,
+        price: getProduct.price,
+        image: "http://" + req.headers.host + "/" + getProduct.image,
+        createdAt: getProduct.createdAt,
+        updatedAt: getProduct.updated,
+        deletedAt: getProduct.deletedAt
+      }
+      if(productList){
+        return res.status(200).send(responseHelper.successWithResult(200, 'Product Details', productList))
       }else{
         return res.status(400).send(responseHelper.error(400, 'Something went wrong while fetching data from database'))
       }
