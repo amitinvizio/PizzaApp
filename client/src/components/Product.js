@@ -10,7 +10,7 @@ const Product = () => {
           <span className="bg-gray-200 py-1 rounded-full text-sm px-4">Large</span>
         </div>
         <div className="flex jsutify-between items-center mt-4">
-          <span class="font-bold text-lg">&#x20B9; 800</span>
+          <span className="font-bold text-lg">&#x20B9; 800</span>
           <button className="bg-yellow-500 py-1 px-4 rounded-full font-bold">Add</button>
         </div>
       </div>
