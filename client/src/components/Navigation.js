@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Home from '../pages/Home'
-import Products from '../pages/Products'
+import ProductsPage from '../pages/ProductsPage'
 import Cart from '../pages/Cart'
 import SingleProduct from '../pages/SingleProduct'
 
@@ -42,7 +42,7 @@ const Navigation = () => {
         <Switch>
           <Route path="/" component={Home} exact>
           </Route>
-          <Route path="/products" component={Products}>
+          <Route path="/products" component={ProductsPage}>
           </Route>
           <Route path="/product/:uniqueId" exact component={SingleProduct}></Route>
           <Route path="/cart" component={Cart}>
