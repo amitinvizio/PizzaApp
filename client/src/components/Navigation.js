@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Home from '../pages/Home'
 import Products from '../pages/Products'
 import Cart from '../pages/Cart'
+import SingleProduct from '../pages/SingleProduct'
 
 const logoStyle = {
   height: 80,
@@ -43,6 +44,7 @@ const Navigation = () => {
           </Route>
           <Route path="/products" component={Products}>
           </Route>
+          <Route path="/product/:uniqueId" exact component={SingleProduct}></Route>
           <Route path="/cart" component={Cart}>
           </Route>
         </Switch>

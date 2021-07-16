@@ -43,7 +43,7 @@ module.exports = {
 
   getProductListByID: async (query) => {
     try {
-      let getProduct = await product.findOne({ where: { id: query } })
+      let getProduct = await product.findOne({ where: { uniqueId: query } })
       if (getProduct) {
         return getProduct
       } else {
