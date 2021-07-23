@@ -1,0 +1,58 @@
+<%- include('header') -%>
+  <div class="container pt-3">
+    <h1>
+      <%= title %>
+    </h1>
+    <p>Welcome to <%= title %>
+    </p>
+    <br>
+    
+    <div class="row"> 
+      <div class="col-lg-4">
+        <a href="/addProduct" class="btn btn-primary btn-sm"> Add New Product</a>
+      </div>
+    </div>
+    <br>
+    <p>Products Listing</p>
+    <div class="row">
+      <div class="col-lg-8 table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <th width="10">SR NO</th>
+            <th width="20">Name</th>
+            <th width="30">Image</th>
+            <th width="10">Size</th>
+            <th width="10">Price</th>
+            <th width="20">Action</th>
+          </thead>
+          <tbody>
+            <% for(var i=0; i < products.length; i++) { %>
+              <tr>
+                <td>
+                  <%= i+1 %>
+                </td>
+                <td>
+                  <%= products[i].name %>
+                </td>
+                <td>
+                  <img src="<%= products[i].image %>" width="70px" height="100px"/>
+                </td>
+                <td>
+                  <%= products[i].size %>
+                </td>
+                <td>
+                  <%= products[i].price %>
+                </td>
+                <td><a class="btn btn-warning btn-sm">Edit</a> <a class="btn btn-danger btn-sm">Delete</a></td>
+              </tr>
+              <% } %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-lg-4">
+        
+      </div>
+    </div>
+  </div>
+  
+  <%- include('footer') -%>

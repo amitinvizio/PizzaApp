@@ -1,0 +1,46 @@
+<%- include('header') -%>
+
+  <div class="container pt-3">
+    <h4>
+      <%= title %>
+    </h4>
+    <div class="row">
+      <div class="col-lg-6 offset-2">
+        <form action="/product" class="pt-3" method="POST" id="addProduct" enctype="multipart/form-data">
+          <div class="form-row align-items-center">
+            <div class="col-auto">
+              <label class="sr-only">Name</label>
+              <input type="text" name="name" class="form-control mb-2" placeholder="Enter Product Name">
+            </div>
+            <div class="col-auto">
+              <label class="sr-only">Price</label>
+              <input type="text" name="price" class="form-control mb-2" placeholder="Enter Price in Rs">
+            </div>
+            <div class="col-auto">
+              <label class="sr-only">Image</label>
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">@</div>
+                </div>
+                <input type="file" class="form-control" name="image">
+              </div>
+            </div>
+            <div class="col-auto">
+              <label>Enter Size</label>
+              <input class="form-control" type="text" name="size" placeholder="Enter Size of Product">
+            </div><br>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <%- include('footer') -%>
+  <script>
+      $('#addProduct').submit(function (event) {
+        alert("Data Inserted Successfully")
+      })
+  </script>

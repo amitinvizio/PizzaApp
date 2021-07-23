@@ -5,8 +5,8 @@ var middleware = require('./middleware/validators')
 
 var router = express.Router()
 router.use(cors())
-
-router.post('/', [ middleware.isUserLogin ], productController.store)
+//, [ middleware.isUserLogin ]
+router.post('/', productController.store)
 router.patch('/:id', [ middleware.isUserLogin ], productController.updateProduct)
 router.get('/', productController.getAllProductList)
 router.get('/:id', productController.getProductListByID)
