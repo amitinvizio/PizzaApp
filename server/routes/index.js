@@ -25,9 +25,19 @@ router.get('/', (req, res) => {
 })
 
 router.get('/addProduct', (req, res) => {
-  res.render('newProduct', {
-    title: 'Add New Product'
+  axios.post('http://localhost:3001/login', {
+    headers: {
+      contentType: 'application/json',
+      authorization: localStorage.getItem('token')
+    }
   })
+  .then((response) => {
+    res.render('newProduct', {
+      title: 'Add New Product',
+    })
+  })
+  .catch(error => { res.send(error) })
+  
 })
 
 router.get('/login', (req, res) => {

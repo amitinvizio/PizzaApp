@@ -75,19 +75,4 @@ module.exports = {
     )(req, res, next)
   },
 
-  // logout: async (req, res) => {
-  //   try {
-  //     console.log('Token :: ', req.body.token)
-  //     let logout = await destroy()
-  //     return res.status(200).send(responseHelper.successWithResult(200, 'Logout User Successfully', req.token))
-  //   } catch (exception) {
-  //     log('indexController:logout', exception)
-  //   }
-  // },
-
-  test: (req, res) => {
-    console.log(`GET with Test Method`)
-    log(`Hello World`, req)
-    res.send(`Hello World`)
-  }
 }
