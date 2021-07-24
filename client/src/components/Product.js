@@ -6,8 +6,8 @@ const Product = (props) => {
   return (
     <>
       <Link to={`/product/${product.uniqueId}`} >
-        <div>
-          <img src={product.image} alt="pizza" />
+        <div className="hover:bg-yellow-200">
+          <img src={product.image} alt="pizza" className="object-fill bg-rose-300" style={ { width: 200 + 'px', height: 200 + 'px'} }/>
           <div className="text-center">
             <h2 className="text-lg font-bold py-2">{product.name}</h2>
             <span className="bg-gray-200 py-1 rounded-full text-sm px-4">{product.size}</span>
