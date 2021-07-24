@@ -6,16 +6,16 @@
     <p>Welcome to <%= title %>
     </p>
     <br>
-    
-    <div class="row"> 
-      <div class="col-lg-4">
+
+    <div class="row">
+      <div class="col-lg-4 col-md-4">
         <a href="/addProduct" class="btn btn-primary btn-sm"> Add New Product</a>
       </div>
     </div>
     <br>
     <p>Products Listing</p>
     <div class="row">
-      <div class="col-lg-8 table-responsive">
+      <div class="col-lg-8 col-md-8 table-responsive">
         <table class="table table-bordered table-striped">
           <thead>
             <th width="10">SR NO</th>
@@ -35,7 +35,7 @@
                   <%= products[i].name %>
                 </td>
                 <td>
-                  <img src="<%= products[i].image %>" width="70px" height="100px"/>
+                  <img src="<%= products[i].image %>" width="70px" height="100px" />
                 </td>
                 <td>
                   <%= products[i].size %>
@@ -43,15 +43,38 @@
                 <td>
                   <%= products[i].price %>
                 </td>
-                <td><a class="btn btn-warning btn-sm">Edit</a> <a class="btn btn-danger btn-sm">Delete</a></td>
+                <td><a id="editProduct" sid="<%= products[i].id %>" class="btn btn-warning btn-sm">Edit</a> <a
+                    class="btn btn-danger btn-sm" id="deleteProduct" sid="<%= products[i].id %>">Delete</a></td>
               </tr>
               <% } %>
           </tbody>
         </table>
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-4 col-md-4">
       </div>
     </div>
   </div>
-  
+
   <%- include('footer') -%>
+
+    <script>
+      $(document).ready(function () {
+        $('#deleteProduct').click(function (e) {
+          e.preventDefault()
+          var qtoken = localStorage.getItem('token')
+          var token = qtoken.replaceAll('"', '');
+
+          var id = $("#deleteProduct").attr("sid");
+          $.ajax({
+            type: "DELETE",
+            url: '/product/' + id,
+            //data: id, // serializes form input
+            headers: { "authorization": token },
+            success: function (res) {
+              alert(res.data)
+              window.location.href = '/'
+            }
+          });
+        })
+      })
+    </script>
