@@ -1,31 +1,52 @@
 <%- include('header') -%>
 
-<div class="container p-3">
-  <div class="row">
-    <div class="col-lg-6 offset-2">
-      <div class="card">
-        <div class="card-header"></div>
-        <div class="card-body">
-          <form method="post" action="/login">
-            <div class="form-row">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Enter Email" name="email" />
+  <div class="container pt-5">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 offset-4">
+        <div class="card">
+          <div class="card-header text-center">Pizza App Admin Login</div>
+          <div class="card-body">
+            <form method="post" id="loginForm" action="/login">
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Enter Email" name="email" />
+                </div>
+              </div><br>
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Enter Password" name="password" />
+                </div>
+              </div><br>
+              <div class="form-row justify-center text-center">
+                <div class="form-group">
+                  <button type="submit" class="btn btn-info btn-sm">Login</button>
+                  <button type="reset" class="btn btn-warning btn-sm">Reset</button>
+                </div>
               </div>
-            </div><br>
-            <div class="form-row">
-              <div class="form-group">
-                <input type="password" class="form-control" placeholder="Enter Password" name="password"/>
-              </div>
-            </div><br>
-            <div class="form-row justify-center">
-              <div class="form-group">
-                <button type="submit" class="btn btn-info btn-sm">Login</button>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<%- include('footer') -%>
+
+  <%- include('footer') -%>
+    <script>
+      $(document).ready(function () {
+        $('#loginForm').submit(function (e) {
+          e.preventDefault()
+          var form = $(this);
+          var url = form.attr('action'); //get submit url [replace url here if desired]
+          $.ajax({
+            type: "POST",
+            url: url,
+            data: form.serialize(), // serializes form input
+            success: function (data) {
+              console.log(data);
+              localStorage.setItem('token', JSON.stringify(data.data))
+              window.location.href = '/'
+            }
+          });
+        })
+      })
+    </script>

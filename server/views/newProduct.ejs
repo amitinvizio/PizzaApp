@@ -22,7 +22,7 @@
                 <div class="input-group-prepend">
                   <div class="input-group-text">@</div>
                 </div>
-                <input type="file" class="form-control" name="image">
+                <input type="file" class="form-control" id="image" name="image">
               </div>
             </div>
             <div class="col-auto">
@@ -37,10 +37,31 @@
       </div>
     </div>
   </div>
-  
+
   <%- include('footer') -%>
-  <script>
-      $('#addProduct').submit(function (event) {
-        alert("Data Inserted Successfully")
+    <script>
+      $(document).ready(function () {
+        $('#addProduct').submit(function (e) {
+          e.preventDefault()
+          var qtoken = localStorage.getItem('token')
+          var token = qtoken.replaceAll('"', '');
+
+          var form = $('#addProduct')[0]; // You need to use standard javascript object here
+          var formData = new FormData(form);
+          console.log(formData)
+
+          $.ajax({
+            type: "POST",
+            url: url,
+            enctype: 'multipart/form-data',
+            data: formData,
+            headers: { "authorization": token },
+            contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+            processData: false,
+            success: function (data) {
+              window.location.href = '/'
+            }
+          });
+        })
       })
-  </script>
+    </script>

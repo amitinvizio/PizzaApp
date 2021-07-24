@@ -16,7 +16,10 @@ const handleMultipartData = multer({ storage, limit: { fileSize: 1000000 * 5 } }
 module.exports = {
   store: async (req, res) => {
     try {
+      
       handleMultipartData(req, res, async (err) => {
+        console.log(req.file)
+        console.log(req.body)
         if (err) {
           return res.status(500).send(responseHelper.error(500, err.message))
         }

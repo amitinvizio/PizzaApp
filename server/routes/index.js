@@ -25,21 +25,12 @@ router.get('/', (req, res) => {
 })
 
 router.get('/addProduct', (req, res) => {
-  axios.post('http://localhost:3001/login', {
-    headers: {
-      contentType: 'application/json',
-      authorization: localStorage.getItem('token')
-    }
+  res.render('newProduct', {
+    title: 'Add New Product',
   })
-  .then((response) => {
-    res.render('newProduct', {
-      title: 'Add New Product',
-    })
-  })
-  .catch(error => { res.send(error) })
-  
 })
 
+// Displaying Login View with this route
 router.get('/login', (req, res) => {
   res.render('login', {
     title: 'Login Pizza Admin'
@@ -48,7 +39,7 @@ router.get('/login', (req, res) => {
 
 router.post('/register', [ middleware.registerModuleValidaiton ], index.register)
 
-// user login api
+// user login api with this you can login through
 router.post('/login', [ middleware.loginModuleValidaiton ], index.login)
 
 

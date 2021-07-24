@@ -68,6 +68,7 @@ module.exports = {
   isUserLogin: (req, res, next) => {
     try {
       let token = req.headers.authorization || req.body.token
+      console.log("Token :: ", token)
       jwt.verify(token, process.env.SECRET, async function (err, decoded) {
         if (err) {
           return res.status(401).send(responseHelper.error(401, 'please login again.'))
