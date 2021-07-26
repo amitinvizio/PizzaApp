@@ -6,11 +6,6 @@
     "auditLog": "logs\\.830bc859f29aefe494fded69ef2908148638dc68-audit.json",
     "files": [
         {
-            "date": 1625982228187,
-            "name": "logs\\PizzaBook-2021-07-11.log",
-            "hash": "c0b689b2de155f14b621fdc3b2d4538e"
-        },
-        {
             "date": 1626072582601,
             "name": "logs\\PizzaBook-2021-07-12.log",
             "hash": "77a03580e809bc94f525748f192260d7"
@@ -49,6 +44,11 @@
             "date": 1627103515579,
             "name": "logs\\PizzaBook-2021-07-24.log",
             "hash": "047bc2f426b2543fcad25071c2418787"
+        },
+        {
+            "date": 1627274139173,
+            "name": "logs\\PizzaBook-2021-07-26.log",
+            "hash": "e9616f4344e00f94010ed45919e96e87"
         }
     ]
 }
