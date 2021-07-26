@@ -18,8 +18,6 @@ module.exports = {
     try {
       
       handleMultipartData(req, res, async (err) => {
-        console.log(req.file)
-        console.log(req.body)
         if (err) {
           return res.status(500).send(responseHelper.error(500, err.message))
         }
@@ -29,8 +27,6 @@ module.exports = {
         const price = req.body.price
         const image = req.file.destination + req.file.filename
         let productObj = { name, size, price, image }
-
-        //console.log(productObj)
 
         let productStored = await productHelper.productStore(productObj)
 
