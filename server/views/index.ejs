@@ -28,10 +28,10 @@
           <tbody>
             <% for(var i=0; i < products.length; i++) { %>
               <tr>
-                <td>
+                <td class="text-center">
                   <%= i+1 %>
                 </td>
-                <td>
+                <td class="text-center">
                   <%= products[i].name %>
                 </td>
                 <td class="text-center">
@@ -44,8 +44,8 @@
                   <b>Rs. </b>
                   <%= products[i].price %>
                 </td>
-                <td><a id="editProduct" sid="<%= products[i].id %>" class="btn btn-warning btn-sm delete">Edit</a> <a
-                    class="btn btn-danger btn-sm" id="deleteProduct" sid="<%= products[i].id %>">Delete</a></td>
+                <td class="text-center"><a id="editProduct" sid="<%= products[i].id %>" class="btn btn-warning btn-sm edit">Edit</a> <a
+                    class="btn btn-danger btn-sm delete" id="deleteProduct" sid="<%= products[i].id %>">Delete</a></td>
               </tr>
               <% } %>
           </tbody>
@@ -60,12 +60,11 @@
 
     <script>
       $(document).ready(function () {
-        $("#deleteProduct").click(function (e) {
-          console.log("hiii")
+        $ondelete = 
+        $(".table tbody td a.delete").click(function (e) {
           e.preventDefault()
           var qtoken = localStorage.getItem('token')
           var token = qtoken.replaceAll('"', '');
-
           var id = $(this).attr("sid");
           if (confirm("Are you sure. You want to delete ?")) {
             $.ajax({
