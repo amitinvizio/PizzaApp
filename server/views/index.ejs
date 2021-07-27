@@ -44,8 +44,7 @@
                   <b>Rs. </b>
                   <%= products[i].price %>
                 </td>
-                <td class="text-center"><a id="editProduct" sid="<%= products[i].id %>" class="btn btn-warning btn-sm edit">Edit</a> <a
-                    class="btn btn-danger btn-sm delete" id="deleteProduct" sid="<%= products[i].id %>">Delete</a></td>
+                <td class="text-center"><a href="/updateProduct?id=<%= products[i].uniqueId %>" class="btn btn-warning btn-sm edit">Edit</a> <a class="btn btn-danger btn-sm delete" id="deleteProduct" sid="<%= products[i].id %>">Delete</a></td>
               </tr>
               <% } %>
           </tbody>
@@ -60,7 +59,20 @@
 
     <script>
       $(document).ready(function () {
-        $ondelete = 
+        // $(".table tbody td a.edit").click(function (e) {
+        //   e.preventDefault()
+        //   var qtoken = localStorage.getItem('token')
+        //   var token = qtoken.replaceAll('"', '');
+        //   var id = $(this).attr("sid");
+        //   console.log(id)
+        //   $.ajax({
+        //     type: 'GET',
+        //     url: '/updateProduct',
+        //     success: function(res) {
+        //       console.log(res)
+        //     }
+        //   })
+        // })
         $(".table tbody td a.delete").click(function (e) {
           e.preventDefault()
           var qtoken = localStorage.getItem('token')

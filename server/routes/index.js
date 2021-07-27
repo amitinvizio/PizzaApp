@@ -11,20 +11,33 @@ var middleware = require('./middleware/validators')
 
 router.get('/', (req, res) => {
   axios.get('http://localhost:5000/product')
-  .then((response) => {
-    res.render('index', {
-      title: 'Pizza App Admin',
-      products: response.data.data,
+    .then((response) => {
+      res.render('index', {
+        title: 'Pizza App Admin',
+        products: response.data.data,
+      })
     })
-  })
-  .catch(error => {
-    res.send(error)
-  })
+    .catch(error => {
+      res.send(error)
+    })
 })
 
 router.get('/addProduct', (req, res) => {
   res.render('newProduct', {
     title: 'Add New Product',
+  })
+})
+
+router.get('/updateProduct', (req, res) => {
+  axios.get('http://localhost:5000/product/' + req.query.id)
+  .then((response) => {
+    res.render('updateProduct', {
+      title: 'Update Product',
+      productData: response.data.data,
+    })
+  })
+  .catch(error => {
+    console.log(error)
   })
 })
 
@@ -35,10 +48,10 @@ router.get('/login', (req, res) => {
   })
 })
 
-router.post('/register', [ middleware.registerModuleValidaiton ], index.register)
+router.post('/register', [middleware.registerModuleValidaiton], index.register)
 
 // user login api with this you can login through
-router.post('/login', [ middleware.loginModuleValidaiton ], index.login)
+router.post('/login', [middleware.loginModuleValidaiton], index.login)
 
 
 // router.post('/logout', [ middleware.isUserLogin ], index.logout)
