@@ -10,13 +10,11 @@ var defaultV = require('../controller/defaultController')
 var middleware = require('./middleware/validators')
 
 router.get('/', (req, res) => {
-  let jwtToken = process.env.TOKEN
-  axios.get('http://localhost:3001/product')
+  axios.get('http://localhost:5000/product')
   .then((response) => {
     res.render('index', {
       title: 'Pizza App Admin',
       products: response.data.data,
-      token: jwtToken
     })
   })
   .catch(error => {
